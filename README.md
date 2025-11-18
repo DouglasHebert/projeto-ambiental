@@ -1,4 +1,5 @@
 🌿 Sistema de Monitoramento Ambiental Industrial
+
 Disciplina: Inteligência Artificial
 Alunos: Douglas Hebert, Natanael Bezerra, Lucas de Souza Morais
 
@@ -6,158 +7,139 @@ Alunos: Douglas Hebert, Natanael Bezerra, Lucas de Souza Morais
 
 Este projeto implementa um Sistema de Monitoramento Ambiental Industrial, utilizando dados reais de autos de infração do IBAMA.
 
-A solução inclui:
-
-📥 Ingestão e pré-processamento de dados
+🔧 A solução inclui:
+📥 Ingestão e Pré-processamento de Dados
 
 🧽 Limpeza automática do dataset (84 colunas)
 
-🤖 Modelos de IA, incluindo:
+📑 Padronização e tratamento de tipos
 
-Classificação (RandomForestClassifier)
+💾 Geração de arquivos otimizados em Parquet
 
-Regressão (RandomForestRegressor)
+🤖 Modelos de Inteligência Artificial
 
-Detecção de Anomalias (IsolationForest)
+Classificação — RandomForestClassifier
 
-📊 Dashboard interativo em HTML
+Regressão — RandomForestRegressor
 
-🔎 Análises exploratórias
+Detecção de Anomalias — IsolationForest
 
-🧱 Pipeline modularizado (src/)
+📊 Dashboard Interativo em HTML
 
-O objetivo é demonstrar como aplicar IA em dados ambientais para:
-✔️ apoiar fiscalização
-✔️ detectar comportamentos anômalos
-✔️ gerar insights ambientais
+Gráficos com Plotly
+
+Mapa com Leaflet
+
+Indicadores e contadores
+
+Lista de anomalias detectadas
+
+🔎 Análises Exploratórias
+🧱 Pipeline Modularizado (src/)
+🎯 Objetivo do Projeto
+
+Demonstrar, na prática, como aplicar IA em dados ambientais para:
+
+✔️ Apoiar fiscalização
+✔️ Identificar comportamentos anômalos
+✔️ Gerar insights ambientais
 
 📁 Estrutura do Repositório
-
 projeto-ambiental/
 │
 ├── data/
-│ ├── raw/ — dados brutos (CSV do IBAMA)
-│ └── processed/ — dados limpos (parquet)
+│   ├── raw/               # dados brutos (CSV do IBAMA)
+│   └── processed/         # dados limpos (parquet)
 │
-├── models/ — modelos treinados (.joblib)
+├── models/                # modelos treinados (.joblib)
 │
 ├── src/
-│ ├── data_ingestion.py
-│ ├── preprocessing.py
-│ ├── inspect_parquet.py
-│ ├── model.py
-│ └── generate_dashboard.py
+│   ├── data_ingestion.py
+│   ├── preprocessing.py
+│   ├── inspect_parquet.py
+│   ├── model.py
+│   └── generate_dashboard.py
 │
-├── dashboard.html
+├── dashboard.html         # dashboard final
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 
 🚀 Como Executar o Projeto
 1️⃣ Instale as dependências
-
 pip install -r requirements.txt
 
-2️⃣ Coloque o CSV do IBAMA em:
+2️⃣ Adicione o CSV oficial do IBAMA
 
+Coloque o arquivo em:
 data/raw/auto_infracao_2024.csv
 
-3️⃣ Execute o pré-processamento:
-
+3️⃣ Execute o pré-processamento
 python src/preprocessing.py
-Gera arquivos em data/processed:
 
+Gera arquivos em data/processed/:
 clean_autuacoes.parquet
-
 sample_for_dashboard.parquet
 
-4️⃣ Treine os modelos:
-
+4️⃣ Treine os modelos
 python src/model.py
-Gera:
 
+Gera arquivos em models/:
 preprocessor.joblib
-
 rf_clf.joblib
-
 rf_reg.joblib
-
 iso_forest.joblib
 
-5️⃣ Gere o Dashboard:
-
+5️⃣ Gere o Dashboard
 python src/generate_dashboard.py
-Gera:
 
+Saída:
 dashboard.html
-
-Abra no navegador.
+👉 Abra no navegador.
 
 🤖 Modelos Utilizados
-Random Forest Classifier
 
+🔷 Random Forest Classifier
 Usado para classificar infrações com base em:
-
 tipo
-
 gravidade
-
 bioma
-
 UF
-
 histórico
 
-Random Forest Regressor
-
-Prediz valores de multa com base em:
-
+🔶 Random Forest Regressor
+Prediz valores de multa considerando:
 bioma afetado
-
 tipo de infração
-
 estado
+variáveis numéricas e categóricas
 
-campos numéricos e categóricos
-
-Isolation Forest
-
+🟣 Isolation Forest
 Detecta infrações fora do padrão — útil para identificar anomalias ambientais.
 
 📊 Dashboard
-
 O dashboard apresenta:
-
 Gráficos Plotly
-
-Mapa de coordenadas (Leaflet)
-
+Mapa Leaflet
 Indicadores
-
 Lista de anomalias
 
-Filtros por UF, Bioma e Ano
+Filtros por:
+UF
+Bioma
+Ano
 
 Arquivo final: dashboard.html
 
 🧪 Tecnologias Utilizadas
-
-Python 3
-
-Pandas
-
-Scikit-Learn
-
-Numpy
-
-FastParquet
-
-Plotly
-
-Folium
-
-Joblib
+- Python 3
+- Pandas
+- Scikit-Learn
+- Numpy
+- FastParquet
+- Plotly
+- Folium
+- Joblib
 
 📅 Última Atualização
-
 2025-02-28
