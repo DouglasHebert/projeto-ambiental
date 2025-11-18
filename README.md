@@ -140,6 +140,3 @@ Arquivo final: dashboard.html
 - Plotly
 - Folium
 - Joblib
-
-📅 Última Atualização
-2025-02-28
