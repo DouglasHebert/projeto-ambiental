@@ -1,3 +1,4 @@
+# Atualização: ajustes na organização do módulo de modelagem (commit 3)
 # src/model.py
 """
 Treina 3 modelos:
